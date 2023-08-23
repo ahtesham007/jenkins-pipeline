@@ -12,15 +12,16 @@ pipeline {
             steps {
                 echo "Building.."
                 sh '''
-                echo "Building...."
+                pip install -r requirements.txt
                 '''
             }
         }
         stage('Test') {
             steps {
-                echo "Testing for cron.."
-                sh '''
                 echo "Testing.."
+                sh '''
+                python3 hello.py
+                python3 hello.py --name=Ahtesham
                 '''
             }
         }
